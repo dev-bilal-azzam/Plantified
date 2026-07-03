@@ -11,7 +11,7 @@ export default function App() {
         <Hero />
         <Features />
       </main>
-      {/*<Footer />*/}
+      <Footer />
     </div>
   );
 }
