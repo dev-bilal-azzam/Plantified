@@ -196,17 +196,27 @@ export default function Features() {
         className="w-full bg-[#39BB4B]/[0.08] relative pt-4 pb-20 overflow-hidden"
       >
         <div className="absolute inset-0 flex justify-end items-start pt-8 pointer-events-none z-0">
-          <img src={asset('bg_plant.svg')} alt="" className="w-[34%] h-auto" />
+          <img
+            src={asset('bg_plant.svg')}
+            alt=""
+            className="w-[34%] h-auto"
+            loading="lazy"
+            width="400"
+            height="400"
+          />
         </div>
         <div className="mx-auto max-w-screen-xl">
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-48 pr-18 min-h-[450px]">
-            
+
             <motion.div variants={revealItem} className="shrink-0 relative relative min-w-[450px] h-[350px] md:h-[450px]">
               <AnimatePresence custom={direction} mode="popLayout">
                 <motion.img
                   key={activePlant.id}
                   src={activePlant.image}
                   alt={activePlant.name}
+                  width="450"
+                  height="450"
+                  loading="lazy"
                   className="h-full w-auto object-contain drop-shadow-xl"
                   custom={direction}
                   variants={imageVariants}
@@ -239,7 +249,7 @@ export default function Features() {
 
               <div className="flex items-center gap-8 pt-4 border-t border-gray-200/60 w-max">
                 <div className="flex items-center gap-3">
-                  <img src={asset('heart.svg')} alt="Lifespan" className="w-6 h-6" />
+                  <img src={asset('heart.svg')} alt="Lifespan" width="24" height="24" className="w-6 h-6" />
                   <div className="flex flex-col min-w-[90px]">
                     <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Lifespan</span>
                     <AnimatePresence custom={direction} mode="popLayout">
@@ -251,7 +261,7 @@ export default function Features() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <img src={asset('ruler.svg')} alt="Height" className="w-6 h-6" />
+                  <img src={asset('ruler.svg')} alt="Height" width="24" height="24" className="w-6 h-6" />
                   <div className="flex flex-col min-w-[90px]">
                     <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Avg Height</span>
                     <AnimatePresence custom={direction} mode="popLayout">
@@ -263,7 +273,7 @@ export default function Features() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <img src={asset('water_pump.svg')} alt="Watering" className="w-6 h-6" />
+                  <img src={asset('water_pump.svg')} alt="Watering" width="24" height="24" className="w-6 h-6" />
                   <div className="flex flex-col min-w-[90px]">
                     <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Watering</span>
                     <AnimatePresence custom={direction} mode="popLayout">
@@ -282,7 +292,7 @@ export default function Features() {
                   <span>{activePlant.price}$</span>
                 </span>
                 <div className="ml-4 bg-white p-2.5 rounded-full flex items-center justify-center">
-                  <img src={asset('add_to_cart.svg')} alt="Cart" className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45" />
+                  <img src={asset('add_to_cart.svg')} alt="Cart" width="20" height="20" className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45" />
                 </div>
               </button>
             </motion.div>
@@ -308,7 +318,13 @@ export default function Features() {
               ${page === idx ? 'border-2 border-[#307B4F] shadow-md scale-105 -translate-y-1' : ''}
             `}
           >
-            <img src={asset(plant.image)} alt={plant.name} className="w-full h-full object-contain pointer-events-none" />
+            <img 
+              src={asset(plant.image)} 
+              alt={plant.name} 
+              width="80" 
+              height="80" 
+              loading="lazy" 
+              className="w-full h-full object-contain pointer-events-none" />
           </motion.button>
         ))}
       </motion.div>
@@ -322,7 +338,7 @@ export default function Features() {
         className="w-full px-4 sm:px-6 lg:px-8 mt-32 relative z-0"
       >
         <div className="absolute inset-y-0 w-[90%] top-[25%] left-1/2 -translate-x-1/2 z-0">
-          <img src={asset('images/cards_bg.svg')} alt="" className="w-full h-full" />
+          <img src={asset('images/cards_bg.svg')} alt="" width="800" height="400" loading="lazy" className="w-full h-full" />
         </div>
 
         <div className="w-[66%] mx-auto relative z-20">
@@ -333,7 +349,13 @@ export default function Features() {
                   <span className="absolute top-3 left-3 bg-brand-green text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full z-10">
                     {card.price}
                   </span>
-                  <img src={asset(card.img)} alt={card.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <img 
+                    src={asset(card.img)} 
+                    alt={card.title} 
+                    width="300"
+                    height="300"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    loading="lazy" />
                 </div>
                 <p className="font-poppins font-medium text-[18px] text-[#1F1F1F]/[0.88]">{card.q}</p>
                 <p className="font-poppins font-medium text-[18px] text-[#1F1F1F]/[0.88]">{card.title}</p>
@@ -369,12 +391,18 @@ export default function Features() {
           {steps.map((step, idx) => (
             <motion.div variants={revealItem} key={idx} className="relative flex flex-col items-center">
               <div className="w-16 h-16 bg-[#39BB4B]/[0.08] rounded-2xl flex items-center justify-center mb-4">
-                <img src={asset(step.icon)} alt={step.title} className="w-8 h-8 object-contain" />
+                <img src={asset(step.icon)} alt={step.title} width="32" height="32" className="w-8 h-8 object-contain" />
               </div>
               <h4 className="font-bold text-brand-text mb-2">{step.title}</h4>
               <p className="text-brand-gray text-sm max-w-[200px] text-center">{step.desc}</p>
               {idx < steps.length - 1 && (
-                <img src={asset(`/images/dashed_arrow_${idx + 1}.svg`)} alt="" className="hidden md:block absolute top-8 -right-16 w-24 pointer-events-none" />
+                <img 
+                  src={asset(`/images/dashed_arrow_${idx + 1}.svg`)} 
+                  alt=""
+                  width="96"
+                  height="30"
+                  loading="lazy"
+                  className="hidden md:block absolute top-8 -right-16 w-24 pointer-events-none" />
               )}
             </motion.div>
           ))}
@@ -392,8 +420,8 @@ export default function Features() {
         <div className="max-w-7xl mx-auto relative">
           <div className="bg-[#39BB4B]/[0.08] rounded-[40px] pt-12 md:pt-16 pb-12 md:pb-14 px-6 md:px-12 relative z-0">
             <div className="absolute right-6 lg:-right-16 top-[0] h-[100%] w-[15%] pointer-events-none hidden lg:block z-10">
-              <img src={asset('plant_seasons_start.svg')} alt="Plant State 1" className="absolute top-0 left-0 w-full h-auto animate-leaf-start-frames" />
-              <img src={asset('plant_seasons_end.svg')} alt="Plant State 2" className="absolute top-0 left-0 w-full h-auto animate-leaf-end-frames" />
+              <img src={asset('plant_seasons_start.svg')} alt="" width="150" height="500" loading="lazy" className="absolute top-0 left-0 w-full h-auto animate-leaf-start-frames" />
+              <img src={asset('plant_seasons_end.svg')} alt="" width="150" height="500" loading="lazy" className="absolute top-0 left-0 w-full h-auto animate-leaf-end-frames" />
             </div>
 
             <motion.div variants={revealItem} className="max-w-xl relative z-20">
