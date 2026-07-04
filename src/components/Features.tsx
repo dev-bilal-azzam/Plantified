@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, type Transition } from 'framer-motion';
+import { asset } from '../utils/assets';
 
 // Fixed list extracted from the design frame
 const plantsData = [
@@ -11,7 +12,7 @@ const plantsData = [
     height: "15 - 30 cm",
     watering: "1x / Month",
     price: "18.99",
-    image: "/images/cactus_spike.png"
+    image: "images/cactus_spike.png"
   },
   {
     id: 1,
@@ -21,7 +22,7 @@ const plantsData = [
     height: "30 - 60 cm",
     watering: "1x / 2 Weeks",
     price: "22.99",
-    image: "/images/aloevera.png"
+    image: "images/aloevera.png"
   },
   {
     id: 2,
@@ -31,7 +32,7 @@ const plantsData = [
     height: "30 - 90 cm",
     watering: "1x / 3 Weeks",
     price: "24.99",
-    image: "/images/snake_plant.png"
+    image: "images/snake_plant.png"
   },
   {
     id: 3,
@@ -41,7 +42,7 @@ const plantsData = [
     height: "Trails up to 3m",
     watering: "1x / Week",
     price: "16.99",
-    image: "/images/pothos.png"
+    image: "images/pothos.png"
   },
   {
     id: 4,
@@ -51,7 +52,7 @@ const plantsData = [
     height: "1 - 3 m",
     watering: "1x / 2 Weeks",
     price: "35.99",
-    image: "/images/monstera.png"
+    image: "images/monstera.png"
   },
   {
     id: 5,
@@ -61,7 +62,7 @@ const plantsData = [
     height: "20 - 30 cm",
     watering: "1x / Week",
     price: "19.99",
-    image: "/images/pilea.png"
+    image: "images/pilea.png"
   }
 ];
 
@@ -119,9 +120,9 @@ export default function Features() {
   };
 
   const personalityCards = [
-    { img: "/images/card_1.png", price: "24.99$", q: "Always you Busy?", title: "Meet Ivy" },
-    { img: "/images/card_2.png", price: "5.99$", q: "Need for inspiration?", title: "Meet mint" },
-    { img: "/images/card_3.png", price: "16.99$", q: "Always on the move?", title: "Meet Spike" }
+    { img: "images/card_1.png", price: "24.99$", q: "Always you Busy?", title: "Meet Ivy" },
+    { img: "images/card_2.png", price: "5.99$", q: "Need for inspiration?", title: "Meet mint" },
+    { img: "images/card_3.png", price: "16.99$", q: "Always on the move?", title: "Meet Spike" }
   ];
 
   const seasonalCare = [
@@ -205,7 +206,7 @@ export default function Features() {
 
         <div className="absolute inset-0 flex justify-end items-start pt-8 pointer-events-none z-0">
           <img
-            src="/bg_plant.svg"
+            src={asset("bg_plant.svg")}
             alt=""
             className="w-[34%] h-auto"
           />
@@ -262,7 +263,7 @@ export default function Features() {
 
               {/* Lifespan */}
               <div className="flex items-center gap-3">
-                <img src="/heart.svg" alt="Lifespan" className="w-6 h-6" />
+                <img src={asset("heart.svg")} alt="Lifespan" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
                   <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Lifespan</span>
                   <AnimatePresence custom={direction} mode="popLayout">
@@ -284,7 +285,7 @@ export default function Features() {
 
               {/* Avg Height */}
               <div className="flex items-center gap-3">
-                <img src="/ruler.svg" alt="Height" className="w-6 h-6" />
+                <img src={asset("ruler.svg")} alt="Height" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
                   <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Avg Height</span>
                   <AnimatePresence custom={direction} mode="popLayout">
@@ -306,7 +307,7 @@ export default function Features() {
 
               {/* Watering */}
               <div className="flex items-center gap-3">
-                <img src="/water_pump.svg" alt="Watering" className="w-6 h-6" />
+                <img src={asset("water_pump.svg")} alt="Watering" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
                   <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Watering</span>
                   <AnimatePresence custom={direction} mode="popLayout">
@@ -337,7 +338,7 @@ export default function Features() {
 
               <div className="ml-4 bg-white p-2.5 rounded-full flex items-center justify-center">
                 <img
-                  src="/add_to_cart.svg"
+                  src={asset("add_to_cart.svg")}
                   alt="Cart"
                   className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45"
                 />
@@ -363,7 +364,7 @@ export default function Features() {
             `}
           >
             <img
-              src={plant.image}
+              src={asset(plant.image)}
               alt={plant.name}
               className="w-full h-full object-contain pointer-events-none"
             />
@@ -377,7 +378,7 @@ export default function Features() {
 
         <div className="absolute inset-y-0 w-[90%] top-[25%] left-1/2 -translate-x-1/2 z-0">
           <img
-            src="images/cards_bg.svg"
+            src={asset("images/cards_bg.svg")}
             alt=""
             className="w-full h-full"
           />
@@ -393,7 +394,7 @@ export default function Features() {
                   </span>
 
                   <img
-                    src={card.img}
+                    src={asset(card.img)}
                     alt={card.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
@@ -429,7 +430,7 @@ export default function Features() {
               {/* Icon */}
               <div className="w-16 h-16 bg-[#39BB4B]/[0.08] rounded-2xl flex items-center justify-center mb-4">
                 <img
-                  src={step.icon}
+                  src={asset(step.icon)}
                   alt={step.title}
                   className="w-8 h-8 object-contain"
                 />
@@ -447,7 +448,7 @@ export default function Features() {
               {/* Arrow */}
               {idx < steps.length - 1 && (
                 <img
-                  src={`/images/dashed_arrow_${idx + 1}.svg`}
+                  src={asset(`/images/dashed_arrow_${idx + 1}.svg`)}
                   alt=""
                   className="hidden md:block absolute top-8 -right-16 w-24 pointer-events-none"
                 />

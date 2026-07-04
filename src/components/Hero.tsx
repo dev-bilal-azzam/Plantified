@@ -1,4 +1,5 @@
 import { motion, type Transition } from "framer-motion";
+import { asset } from "../utils/assets";
 
 export default function Hero() {
   const containerVariants = {
@@ -49,13 +50,13 @@ return (
               className="relative w-[136.81px] h-[120px]"
             >
               <img
-                src="/branch_top_1.svg"
+                src={asset("branch_top_1.svg")}
                 alt=""
                 className="absolute top-0 left-0"
               />
               
               <motion.img
-                src="/branch_top_2.svg"
+                src={asset("branch_top_2.svg")}
                 alt=""
                 className="absolute -top-5 left-13 origin-center"
                 animate={{ rotate: [0, -3, -3, 0, 0] }} 
@@ -63,7 +64,7 @@ return (
               />
 
               <motion.img
-                src="/branch_bottom_1.svg"
+                src={asset("branch_bottom_1.svg")}
                 alt=""
                 className="absolute top-10 left-5 origin-center"
                 animate={{ rotate: [0, -10, -10, 0, 0] }}
@@ -71,7 +72,7 @@ return (
               />
 
               <motion.img
-                src="/branch_bottom_2.svg"
+                src={asset("branch_bottom_2.svg")}
                 alt=""
                 className="absolute top-9 left-18 origin-center"
                 animate={{ rotate: [-2, -13, -13, -2, -2] }}
@@ -79,7 +80,7 @@ return (
               />
 
               <motion.img
-                src="/branch_bottom_3.svg"
+                src={asset("branch_bottom_3.svg")}
                 alt=""
                 className="absolute top-9 left-26 origin-center"
                 animate={{ rotate: [-2, -8, -8, -2, -2] }}
@@ -87,7 +88,7 @@ return (
               />
               
               <motion.img
-                src="/branch_bottom_4.svg"
+                src={asset("branch_bottom_4.svg")}
                 alt=""
                 className="absolute top-5 left-26.5 rotate-[-6deg]"
                 style={{ transformOrigin: "100% 100%" }}
@@ -149,7 +150,7 @@ return (
 
                 <div className="relative z-10 w-8 h-8 bg-white rounded-full flex items-center justify-center p-1.5 shadow-sm">
                   <img
-                    src="/arrow.svg"
+                    src={asset("arrow.svg")}
                     alt="Arrow Right"
                     className="w-full h-full object-contain transition-transform duration-300 group-hover:-rotate-45"
                   />
@@ -187,7 +188,7 @@ return (
             />
 
             <img
-              src="/plant.png"
+              src={asset("plant.png")}
               alt="Hands gently holding a potted Monstera plant"
               className="w-[669px] max-w-[709px] h-auto object-contain object-bottom relative z-10 select-none pointer-events-none translate-y-[1px]"
               loading="eager"

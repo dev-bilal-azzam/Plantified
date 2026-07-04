@@ -1,11 +1,13 @@
 
+import { asset } from "../utils/assets";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-brand-bg pt-12 flex flex-col items-center">
       {/* CTA Box */}
       <div className="w-full max-w-7xl bg-brand-dark text-white rounded-3xl p-12 text-center relative overflow-hidden mb-12 shadow-2xl">
         <img
-          src="/footer.svg"
+          src={asset("footer.svg")}
           alt=""
           className="absolute left-[70%] top-1/2 -translate-y-1/2 h-full w-auto h-auto object-contain pointer-events-none select-none z-0"
         />
