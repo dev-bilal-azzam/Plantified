@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <motion.footer 
-      className="w-full bg-brand-bg pt-12 flex flex-col items-center"
+      className="w-full bg-brand-bg pt-12 flex flex-col items-center overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
