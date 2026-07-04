@@ -201,7 +201,7 @@ export default function Features() {
   return (
     <article className="w-full">
 
-      <section className="w-full bg-[#39BB4B]/[0.08] relative pt-16 pb-20 overflow-hidden">
+      <section className="w-full bg-[#39BB4B]/[0.08] relative pt-4 pb-20 overflow-hidden">
 
         <div className="absolute inset-0 flex justify-end items-start pt-8 pointer-events-none z-0">
           <img
@@ -210,17 +210,17 @@ export default function Features() {
             className="w-[34%] h-auto"
           />
         </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 min-h-[450px] px-4 sm:px-6 lg:px-8">
+<div className="mx-auto max-w-screen-xl">
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-48 pr-18 min-h-[450px]">
 
           {/* Left: Plant Image Container */}
-          <div className="flex-1 w-full flex justify-center relative h-[350px] md:h-[400px]">
+          <div className="shrink-0 relative relative min-w-[450px] h-[350px] md:h-[450px]">
             <AnimatePresence custom={direction} mode="popLayout">
               <motion.img
                 key={activePlant.id}
                 src={activePlant.image}
                 alt={activePlant.name}
-                className="absolute h-full w-auto object-contain drop-shadow-xl"
+                className="h-full w-auto object-contain drop-shadow-xl"
                 custom={direction}
                 variants={imageVariants}
                 initial="enter"
@@ -232,7 +232,7 @@ export default function Features() {
           </div>
 
           {/* Right: Plant Details Container */}
-          <div className="flex-1 w-full space-y-8">
+          <div className="flex-1 w-full max-w-[650px] space-y-8">
 
             {/* Animated Name & Description */}
             <div className="relative">
@@ -247,10 +247,10 @@ export default function Features() {
                   exit="exit"
                   transition={springTransition}
                 >
-                  <h2 className="text-4xl font-extrabold text-[#2C3E30]">
+                  <h2 className="text-[32px] md:text-[40px] font-bold text-[#1F1F1F]/[0.88] font-tomorrow">
                     {activePlant.name}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed max-w-lg font-medium">
+                  <p className="text-[18px] font-medium text-[#1F1F1F]/[0.66] font-poppins min-h-[136px]">
                     {activePlant.description}
                   </p>
                 </motion.div>
@@ -262,9 +262,9 @@ export default function Features() {
 
               {/* Lifespan */}
               <div className="flex items-center gap-3">
-                <img src="/heart.svg" alt="Lifespan" className="w-6 h-6 opacity-60" />
+                <img src="/heart.svg" alt="Lifespan" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
-                  <span className="text-gray-500 text-[11px] uppercase font-semibold tracking-wider">Lifespan</span>
+                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Lifespan</span>
                   <AnimatePresence custom={direction} mode="popLayout">
                     <motion.strong
                       key={activePlant.id}
@@ -274,7 +274,7 @@ export default function Features() {
                       animate="center"
                       exit="exit"
                       transition={springTransition}
-                      className="text-[#2C3E30] text-sm block whitespace-nowrap"
+                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
                     >
                       {activePlant.lifespan}
                     </motion.strong>
@@ -284,9 +284,9 @@ export default function Features() {
 
               {/* Avg Height */}
               <div className="flex items-center gap-3">
-                <img src="/ruler.svg" alt="Height" className="w-6 h-6 opacity-60" />
+                <img src="/ruler.svg" alt="Height" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
-                  <span className="text-gray-500 text-[11px] uppercase font-semibold tracking-wider">Avg Height</span>
+                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Avg Height</span>
                   <AnimatePresence custom={direction} mode="popLayout">
                     <motion.strong
                       key={activePlant.id}
@@ -296,7 +296,7 @@ export default function Features() {
                       animate="center"
                       exit="exit"
                       transition={springTransition}
-                      className="text-[#2C3E30] text-sm block whitespace-nowrap"
+                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
                     >
                       {activePlant.height}
                     </motion.strong>
@@ -306,9 +306,9 @@ export default function Features() {
 
               {/* Watering */}
               <div className="flex items-center gap-3">
-                <img src="/water_pump.svg" alt="Watering" className="w-6 h-6 opacity-60" />
+                <img src="/water_pump.svg" alt="Watering" className="w-6 h-6" />
                 <div className="flex flex-col min-w-[90px]">
-                  <span className="text-gray-500 text-[11px] uppercase font-semibold tracking-wider">Watering</span>
+                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Watering</span>
                   <AnimatePresence custom={direction} mode="popLayout">
                     <motion.strong
                       key={activePlant.id}
@@ -318,7 +318,7 @@ export default function Features() {
                       animate="center"
                       exit="exit"
                       transition={springTransition}
-                      className="text-[#2C3E30] text-sm block whitespace-nowrap"
+                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
                     >
                       {activePlant.watering}
                     </motion.strong>
@@ -328,7 +328,7 @@ export default function Features() {
             </div>
 
             {/* Completely Static Add to Desk Button */}
-            <button className="group bg-[#307B4F] hover:bg-[#25613E] text-white pl-6 pr-2 py-2 rounded-full font-medium flex items-center w-fit mt-4">
+            <button className="group bg-[#346E3C] hover:bg-[#25613E] text-white pl-6 pr-1 py-1 rounded-full font-medium flex items-center w-fit mt-4">
               <span className="flex items-center gap-2">
                 <span>Add to my desk</span>
                 <span className="text-white/44">•</span>
@@ -346,6 +346,7 @@ export default function Features() {
 
           </div>
         </div>
+        </div>
       </section>
 
       {/* Thumbnails Row */}
@@ -355,10 +356,10 @@ export default function Features() {
             key={plant.id}
             onClick={() => handlePaginate(idx)}
             className={`
-              relative w-20 h-20 rounded-[14px] bg-white p-2.5 transition-all duration-300 flex-shrink-0 snap-center focus:outline-none shadow-sm
+              relative w-20 h-20 rounded-[14px] bg-white p-2.5 transition-all duration-300 flex-shrink-0 snap-center focus:outline-none
               ${page === idx
                 ? 'border-2 border-[#307B4F] shadow-md scale-105 -translate-y-1'
-                : 'border border-gray-100 hover:border-gray-200 hover:-translate-y-0.5 opacity-90 hover:opacity-100'}
+                : ''}
             `}
           >
             <img
@@ -461,11 +462,10 @@ export default function Features() {
         <div className="max-w-7xl mx-auto relative">
 
           {/* Outer Green Background Box */}
-          {/* تم إعطاء مساحة سفلية كافية (pb-16 md:pb-20) لاحتواء الكاردات بالكامل */}
           <div className="bg-[#39BB4B]/[0.08] rounded-[40px] pt-12 md:pt-16 pb-16 md:pb-20 px-6 md:px-12 relative z-0">
 
             {/* Preserved Image Space for Later Composition */}
-            <div className="absolute right-0 lg:-right-4 top-[-15%] h-[130%] w-[45%] pointer-events-none hidden lg:block z-10">
+            <div className="absolute right-0 lg:-right-4 top-[5%] h-[130%] w-[45%] pointer-events-none hidden lg:block z-10">
               {/* The future image will be placed here. Space & positioning are reserved. */}
             </div>
 
@@ -479,11 +479,10 @@ export default function Features() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 md:mt-16 relative z-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4 md:mt-8 relative z-20">
               {seasonalCare.map((season, idx) => (
                 <div
                   key={idx}
-                  className="p-6"
                 >
                   {/* Header: Icon + Text */}
                   <div className="flex items-center gap-4 mb-5">
@@ -525,11 +524,11 @@ export default function Features() {
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-[#1F1F1F] font-poppins text-[18px] leading-tight">
+                      <h4 className="font-semibold text-[#1F1F1F]/[0.88] font-poppins text-[18px] leading-tight">
                         {season.season}
                       </h4>
 
-                      <p className="text-[13px] text-[#1F1F1F]/[0.48] font-poppins mt-0.5">
+                      <p className="text-[#1F1F1F]/[0.66] text-[12px] font-medium font-poppins mt-0.5">
                         {season.months}
                       </p>
                     </div>
@@ -613,7 +612,7 @@ export default function Features() {
 
                         )}
 
-                        <span>{task.text}</span>
+                        <span className='text-[#1F1F1F]/[0.88] text-[12px] font-medium font-poppins'>{task.text}</span>
                       </li>
                     ))}
                   </ul>
