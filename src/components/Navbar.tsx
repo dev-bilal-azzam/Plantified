@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { asset } from '../utils/assets';
 
 export default function Navbar() {
   const navLinks = ['Home', 'Categories', 'Blog', 'Contacts', 'About us'];
@@ -13,7 +14,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center pt-[20px] pb-[10px]">
-          <a href="/" className="text-plantified-logo font-bold font-ubuntu text-logo" aria-label="Plantified Home">
+          <a href={asset('')} className="text-plantified-logo font-bold font-ubuntu text-logo" aria-label="Plantified Home">
             Plantified
           </a>
         </div>

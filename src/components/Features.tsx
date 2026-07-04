@@ -211,142 +211,140 @@ export default function Features() {
             className="w-[34%] h-auto"
           />
         </div>
-<div className="mx-auto max-w-screen-xl">
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-48 pr-18 min-h-[450px]">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-48 pr-18 min-h-[450px]">
 
-          {/* Left: Plant Image Container */}
-          <div className="shrink-0 relative relative min-w-[450px] h-[350px] md:h-[450px]">
-            <AnimatePresence custom={direction} mode="popLayout">
-              <motion.img
-                key={activePlant.id}
-                src={activePlant.image}
-                alt={activePlant.name}
-                className="h-full w-auto object-contain drop-shadow-xl"
-                custom={direction}
-                variants={imageVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={springTransition}
-              />
-            </AnimatePresence>
-          </div>
-
-          {/* Right: Plant Details Container */}
-          <div className="flex-1 w-full max-w-[650px] space-y-8">
-
-            {/* Animated Name & Description */}
-            <div className="relative">
+            {/* Left: Plant Image Container */}
+            <div className="shrink-0 relative relative min-w-[450px] h-[350px] md:h-[450px]">
               <AnimatePresence custom={direction} mode="popLayout">
-                <motion.div
+                <motion.img
                   key={activePlant.id}
-                  className="space-y-4 w-full"
+                  src={activePlant.image}
+                  alt={activePlant.name}
+                  className="h-full w-auto object-contain drop-shadow-xl"
                   custom={direction}
-                  variants={textVariants}
+                  variants={imageVariants}
                   initial="enter"
                   animate="center"
                   exit="exit"
                   transition={springTransition}
-                >
-                  <h2 className="text-[32px] md:text-[40px] font-bold text-[#1F1F1F]/[0.88] font-tomorrow">
-                    {activePlant.name}
-                  </h2>
-                  <p className="text-[18px] font-medium text-[#1F1F1F]/[0.66] font-poppins min-h-[136px]">
-                    {activePlant.description}
-                  </p>
-                </motion.div>
+                />
               </AnimatePresence>
             </div>
 
-            {/* Static Container with Animated Values */}
-            <div className="flex items-center gap-8 pt-4 border-t border-gray-200/60 w-max">
+            {/* Right: Plant Details Container */}
+            <div className="flex-1 w-full max-w-[650px] space-y-8">
 
-              {/* Lifespan */}
-              <div className="flex items-center gap-3">
-                <img src={asset("heart.svg")} alt="Lifespan" className="w-6 h-6" />
-                <div className="flex flex-col min-w-[90px]">
-                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Lifespan</span>
-                  <AnimatePresence custom={direction} mode="popLayout">
-                    <motion.strong
-                      key={activePlant.id}
-                      custom={direction}
-                      variants={textVariants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      transition={springTransition}
-                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
-                    >
-                      {activePlant.lifespan}
-                    </motion.strong>
-                  </AnimatePresence>
+              {/* Animated Name & Description */}
+              <div className="relative">
+                <AnimatePresence custom={direction} mode="popLayout">
+                  <motion.div
+                    key={activePlant.id}
+                    className="space-y-4 w-full"
+                    custom={direction}
+                    variants={textVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={springTransition}
+                  >
+                    <h2 className="text-[32px] md:text-[40px] font-bold text-[#1F1F1F]/[0.88] font-tomorrow">
+                      {activePlant.name}
+                    </h2>
+                    <p className="text-[18px] font-medium text-[#1F1F1F]/[0.66] font-poppins min-h-[136px]">
+                      {activePlant.description}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <div className="flex items-center gap-8 pt-4 border-t border-gray-200/60 w-max">
+
+                {/* Lifespan */}
+                <div className="flex items-center gap-3">
+                  <img src={asset("heart.svg")} alt="Lifespan" className="w-6 h-6" />
+                  <div className="flex flex-col min-w-[90px]">
+                    <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Lifespan</span>
+                    <AnimatePresence custom={direction} mode="popLayout">
+                      <motion.strong
+                        key={activePlant.id}
+                        custom={direction}
+                        variants={textVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={springTransition}
+                        className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
+                      >
+                        {activePlant.lifespan}
+                      </motion.strong>
+                    </AnimatePresence>
+                  </div>
+                </div>
+
+                {/* Avg Height */}
+                <div className="flex items-center gap-3">
+                  <img src={asset("ruler.svg")} alt="Height" className="w-6 h-6" />
+                  <div className="flex flex-col min-w-[90px]">
+                    <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Avg Height</span>
+                    <AnimatePresence custom={direction} mode="popLayout">
+                      <motion.strong
+                        key={activePlant.id}
+                        custom={direction}
+                        variants={textVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={springTransition}
+                        className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
+                      >
+                        {activePlant.height}
+                      </motion.strong>
+                    </AnimatePresence>
+                  </div>
+                </div>
+
+                {/* Watering */}
+                <div className="flex items-center gap-3">
+                  <img src={asset("water_pump.svg")} alt="Watering" className="w-6 h-6" />
+                  <div className="flex flex-col min-w-[90px]">
+                    <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Watering</span>
+                    <AnimatePresence custom={direction} mode="popLayout">
+                      <motion.strong
+                        key={activePlant.id}
+                        custom={direction}
+                        variants={textVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={springTransition}
+                        className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
+                      >
+                        {activePlant.watering}
+                      </motion.strong>
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
 
-              {/* Avg Height */}
-              <div className="flex items-center gap-3">
-                <img src={asset("ruler.svg")} alt="Height" className="w-6 h-6" />
-                <div className="flex flex-col min-w-[90px]">
-                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Avg Height</span>
-                  <AnimatePresence custom={direction} mode="popLayout">
-                    <motion.strong
-                      key={activePlant.id}
-                      custom={direction}
-                      variants={textVariants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      transition={springTransition}
-                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
-                    >
-                      {activePlant.height}
-                    </motion.strong>
-                  </AnimatePresence>
-                </div>
-              </div>
+              <button className="group bg-[#346E3C] hover:bg-[#25613E] text-white pl-6 pr-1 py-1 rounded-full font-medium flex items-center w-fit mt-4">
+                <span className="flex items-center gap-2">
+                  <span>Add to my desk</span>
+                  <span className="text-white/44">•</span>
+                  <span>{activePlant.price}$</span>
+                </span>
 
-              {/* Watering */}
-              <div className="flex items-center gap-3">
-                <img src={asset("water_pump.svg")} alt="Watering" className="w-6 h-6" />
-                <div className="flex flex-col min-w-[90px]">
-                  <span className="text-[#1F1F1F]/[0.50] font-poppins text-[14px] font-medium tracking-wider">Watering</span>
-                  <AnimatePresence custom={direction} mode="popLayout">
-                    <motion.strong
-                      key={activePlant.id}
-                      custom={direction}
-                      variants={textVariants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      transition={springTransition}
-                      className="text-[#1F1F1F]/[0.80] font-poppins text-[16px] font-medium tracking-wider block whitespace-nowrap"
-                    >
-                      {activePlant.watering}
-                    </motion.strong>
-                  </AnimatePresence>
+                <div className="ml-4 bg-white p-2.5 rounded-full flex items-center justify-center">
+                  <img
+                    src={asset("add_to_cart.svg")}
+                    alt="Cart"
+                    className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45"
+                  />
                 </div>
-              </div>
+              </button>
+
             </div>
-
-            {/* Completely Static Add to Desk Button */}
-            <button className="group bg-[#346E3C] hover:bg-[#25613E] text-white pl-6 pr-1 py-1 rounded-full font-medium flex items-center w-fit mt-4">
-              <span className="flex items-center gap-2">
-                <span>Add to my desk</span>
-                <span className="text-white/44">•</span>
-                <span>{activePlant.price}$</span>
-              </span>
-
-              <div className="ml-4 bg-white p-2.5 rounded-full flex items-center justify-center">
-                <img
-                  src={asset("add_to_cart.svg")}
-                  alt="Cart"
-                  className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-45"
-                />
-              </div>
-            </button>
-
           </div>
-        </div>
         </div>
       </section>
 
@@ -419,10 +417,10 @@ export default function Features() {
       {/* Care Steps Section */}
       <section className="max-w-7xl mt-[100px] mx-auto px-4 py-20 text-center">
         <span className="bg-brand-light px-6 leading-none rounded-full inline-block mb-[37px]">
-  <span className="relative -top-2 text-brand-green font-poppins font-medium text-[24px] tracking-[0.48px]">
-    Small Care, Big Rewards
-  </span>
-</span>
+          <span className="relative -top-2 text-brand-green font-poppins font-medium text-[24px] tracking-[0.48px]">
+            Small Care, Big Rewards
+          </span>
+        </span>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {steps.map((step, idx) => (
@@ -459,15 +457,26 @@ export default function Features() {
       </section>
 
       {/* Seasonal Care Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16">
+      <section className="w-full px-6 sm:px-8 lg:px-16 py-16">
         <div className="max-w-7xl mx-auto relative">
 
           {/* Outer Green Background Box */}
-          <div className="bg-[#39BB4B]/[0.08] rounded-[40px] pt-12 md:pt-16 pb-16 md:pb-20 px-6 md:px-12 relative z-0">
+          <div className="bg-[#39BB4B]/[0.08] rounded-[40px] pt-12 md:pt-16 pb-12 md:pb-14 px-6 md:px-12 relative z-0">
 
-            {/* Preserved Image Space for Later Composition */}
-            <div className="absolute right-0 lg:-right-4 top-[5%] h-[130%] w-[45%] pointer-events-none hidden lg:block z-10">
-              {/* The future image will be placed here. Space & positioning are reserved. */}
+            <div className="absolute right-6 lg:-right-16 top-[0] h-[100%] w-[15%] pointer-events-none hidden lg:block z-10">
+
+              <img
+                src={asset("plant_seasons_start.svg")}
+                alt="Plant State 1"
+                className="absolute top-0 left-0 w-full h-auto animate-leaf-start-frames"
+              />
+
+              <img
+                src={asset("plant_seasons_end.svg")}
+                alt="Plant State 2"
+                className="absolute top-0 left-0 w-full h-auto animate-leaf-end-frames"
+              />
+
             </div>
 
             {/* Texts Container */}

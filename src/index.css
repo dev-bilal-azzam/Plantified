@@ -36,3 +36,29 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
+
+@keyframes leaf-start-frame-swap {
+  0%, 49.9% { 
+    visibility: hidden; 
+  }
+  50%, 100% { 
+    visibility: visible; 
+  }
+}
+
+.animate-leaf-start-frames {
+  animation: leaf-start-frame-swap 3s infinite;
+}
+
+@keyframes leaf-end-frame-swap {
+  0%, 49.9% { 
+    visibility: visible; 
+  }
+  50%, 100% { 
+    visibility: hidden; 
+  }
+}
+
+.animate-leaf-end-frames {
+  animation: leaf-end-frame-swap 3s infinite;
+}
