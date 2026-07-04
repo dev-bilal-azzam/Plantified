@@ -31,7 +31,7 @@ export default function Footer() {
         <img
           src={asset('footer.svg')}
           alt=""
-          className="absolute left-[70%] top-1/2 -translate-y-1/2 h-full w-auto object-contain pointer-events-none select-none z-0"
+          className="absolute left-[74%] top-1/2 -translate-y-1/2 h-full w-auto object-contain pointer-events-none select-none z-0"
         />
         <div className="relative z-10 max-w-2xl mx-auto space-y-2">
           <h2 className="text-[20px] md:text-[28px] font-medium text-[#FFFFFF]/[0.88] font-poppins">

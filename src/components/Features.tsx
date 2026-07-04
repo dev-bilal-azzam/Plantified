@@ -419,7 +419,7 @@ export default function Features() {
       >
         <div className="max-w-7xl mx-auto relative">
           <div className="bg-[#39BB4B]/[0.08] rounded-[40px] pt-12 md:pt-16 pb-12 md:pb-14 px-6 md:px-12 relative z-0">
-            <div className="absolute right-6 lg:-right-16 top-[0] h-[100%] w-[15%] pointer-events-none hidden lg:block z-10">
+            <div className="absolute right-6 lg:-right-10 top-[0] h-[100%] w-[15%] pointer-events-none hidden lg:block z-10">
               <img src={asset('plant_seasons_start.svg')} alt="" width="150" height="500" loading="lazy" className="absolute top-0 left-0 w-full h-auto animate-leaf-start-frames" />
               <img src={asset('plant_seasons_end.svg')} alt="" width="150" height="500" loading="lazy" className="absolute top-0 left-0 w-full h-auto animate-leaf-end-frames" />
             </div>
