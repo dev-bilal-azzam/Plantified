@@ -11,7 +11,7 @@ const plantsData = [
     height: "15 - 30 cm",
     watering: "1x / Month",
     price: "18.99",
-    image: "images/cactus_spike.png"
+    image: "images/cactus_spike.webp"
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ const plantsData = [
     height: "30 - 60 cm",
     watering: "1x / 2 Weeks",
     price: "22.99",
-    image: "images/aloevera.png"
+    image: "images/aloevera.webp"
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const plantsData = [
     height: "30 - 90 cm",
     watering: "1x / 3 Weeks",
     price: "24.99",
-    image: "images/snake_plant.png"
+    image: "images/snake_plant.webp"
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const plantsData = [
     height: "Trails up to 3m",
     watering: "1x / Week",
     price: "16.99",
-    image: "images/pothos.png"
+    image: "images/pothos.webp"
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const plantsData = [
     height: "1 - 3 m",
     watering: "1x / 2 Weeks",
     price: "35.99",
-    image: "images/monstera.png"
+    image: "images/monstera.webp"
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const plantsData = [
     height: "20 - 30 cm",
     watering: "1x / Week",
     price: "19.99",
-    image: "images/pilea.png"
+    image: "images/pilea.webp"
   }
 ];
 
@@ -122,9 +122,9 @@ export default function Features() {
   };
 
   const personalityCards = [
-    { img: "images/card_1.png", price: "24.99$", q: "Always you Busy?", title: "Meet Ivy" },
-    { img: "images/card_2.png", price: "5.99$", q: "Need for inspiration?", title: "Meet mint" },
-    { img: "images/card_3.png", price: "16.99$", q: "Always on the move?", title: "Meet Spike" }
+    { img: "images/card_1.webp", price: "24.99$", q: "Always you Busy?", title: "Meet Ivy" },
+    { img: "images/card_2.webp", price: "5.99$", q: "Need for inspiration?", title: "Meet mint" },
+    { img: "images/card_3.webp", price: "16.99$", q: "Always on the move?", title: "Meet Spike" }
   ];
 
   const seasonalCare = [

@@ -163,7 +163,7 @@ export default function Hero() {
             {/* Backdrop Circle */}
             <div className="absolute w-[900px] h-[900px] rounded-full bg-[#39BB4B]/[0.06] left-1/2 top-1/2 -translate-x-[calc(300px)] -translate-y-[calc(540px)] z-0" />
             <img
-              src={asset('plant.png')}
+              src={asset('images/plant.webp')}
               alt="Hands gently holding a potted Monstera plant"
               className="w-[669px] max-w-[709px] h-auto object-contain object-bottom relative z-10 select-none pointer-events-none translate-y-[1px]"
               // LCP Element: Eagerly loaded, high priority. This is correct.
