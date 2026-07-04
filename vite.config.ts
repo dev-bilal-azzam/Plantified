@@ -5,8 +5,10 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
-    tailwindcss(),],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   base: "/Plantified/",
   resolve: {
     alias: {
@@ -23,10 +25,6 @@ export default defineConfig({
           }
         },
       },
-    },
-    // Keep this to remove console logs and debuggers in production builds
-    esbuild: {
-      drop: ['console', 'debugger'],
     },
   },
 });

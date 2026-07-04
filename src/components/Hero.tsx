@@ -1,10 +1,6 @@
 import { motion, type Transition } from 'framer-motion';
 import { asset } from '../utils/assets';
 
-// SEO & Performance Advice:
-// For best performance, convert all image assets (.png, .jpg) to .webp format.
-// WebP offers superior compression and smaller file sizes, leading to faster load times.
-
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -172,7 +168,6 @@ export default function Hero() {
               className="w-[669px] max-w-[709px] h-auto object-contain object-bottom relative z-10 select-none pointer-events-none translate-y-[1px]"
               // LCP Element: Eagerly loaded, high priority. This is correct.
               loading="eager"
-              fetchpriority="high"
               width="669"
               height="709"
             />
