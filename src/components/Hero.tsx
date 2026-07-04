@@ -6,44 +6,49 @@ export default function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
     }
-  };
+  } as const;
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" }
+    }
+  } as const;
 
   const totalDuration = 2.8; 
   const branchTransition: Transition = {
     duration: totalDuration,
     repeat: Infinity,
     ease: "linear",
-    times: [
-      0, 
-      0.3 / totalDuration, 
-      1.3 / totalDuration, 
-      1.6 / totalDuration, 
-      1                     
-    ],
+    times: [0, 0.3 / totalDuration, 1.3 / totalDuration, 1.6 / totalDuration, 1],
   };
 
-return (
+  return (
     <section className="w-full py-4 md:py-8 overflow-hidden">
-      <div className="flex flex-col-reverse md:flex-row items-top">
+      <motion.div 
+        className="flex flex-col-reverse md:flex-row items-top"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
         {/* Left */}
-        <div className="flex-1 max-w-7xl ml-auto ">
-          <motion.div
-            className="flex-1 space-y-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div className="flex-1 max-w-7xl ml-auto">
+          <div className="flex-1 space-y-8">
             {/* Branch Image Composite */}
             <motion.div
               variants={itemVariants}
@@ -119,35 +124,10 @@ return (
             {/* Buttons */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2 pl-6 sm:pl-8 lg:pl-12">
               <button
-                className="
-                  group relative overflow-hidden
-                  bg-brand-green
-                  text-white
-                  pl-7 pr-3 py-3
-                  rounded-full
-                  font-medium
-                  flex items-center gap-4
-                  transition-transform
-                  active:scale-95
-                  min-h-[52px]
-                "
+                className="group relative overflow-hidden bg-brand-green text-white pl-7 pr-3 py-3 rounded-full font-medium flex items-center gap-4 transition-transform active:scale-95 min-h-[52px]"
               >
-                {/* Black overlay */}
-                <span
-                  className="
-                    absolute inset-0
-                    bg-black/8
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                    duration-200
-                  "
-                />
-
-                <span className="relative z-10">
-                  Find Your Plant Friend
-                </span>
-
+                <span className="absolute inset-0 bg-black/8 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <span className="relative z-10">Find Your Plant Friend</span>
                 <div className="relative z-10 w-8 h-8 bg-white rounded-full flex items-center justify-center p-1.5 shadow-sm">
                   <img
                     src={asset("arrow.svg")}
@@ -161,32 +141,17 @@ return (
                 Explore
               </button>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right */}
         <div className="flex-1 flex justify-end">
           <motion.div
+            variants={imageVariants}
             className="flex-1 relative w-full flex justify-end items-end pr-0 pb-0 self-end"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Backdrop Circle */}
-            <div
-              className="
-                absolute
-                w-[900px] h-[900px]
-                rounded-full
-                bg-[#39BB4B]/[0.06]
-                left-1/2
-                top-1/2
-                -translate-x-[calc(300px)]
-                -translate-y-[calc(540px)]
-                z-0
-              "
-            />
-
+            <div className="absolute w-[900px] h-[900px] rounded-full bg-[#39BB4B]/[0.06] left-1/2 top-1/2 -translate-x-[calc(300px)] -translate-y-[calc(540px)] z-0" />
             <img
               src={asset("plant.png")}
               alt="Hands gently holding a potted Monstera plant"
@@ -195,7 +160,7 @@ return (
             />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
