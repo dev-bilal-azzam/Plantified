@@ -359,7 +359,11 @@ export default function Features() {
                 </div>
                 <p className="font-poppins font-medium text-[18px] text-[#1F1F1F]/[0.88]">{card.q}</p>
                 <p className="font-poppins font-medium text-[18px] text-[#1F1F1F]/[0.88]">{card.title}</p>
-                <a href="#" className="text-brand-green text-xs font-medium hover:underline inline-block pt-1">
+                <a 
+                  href={`#${card.title.replace(/\s+/g, '-').toLowerCase()}`} 
+                  aria-label={`View details about ${card.title}`}
+                  className="text-brand-green text-xs font-medium hover:underline inline-block pt-1"
+                >
                   View Details
                 </a>
               </motion.div>

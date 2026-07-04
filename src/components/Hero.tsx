@@ -54,14 +54,12 @@ export default function Hero() {
               variants={itemVariants}
               className="relative w-[136.81px] h-[120px]"
             >
-              {/* 
-                NOTE: Explicit width and height are added to prevent CLS. 
-                Adjust values to match the actual SVG dimensions.
-              */}
               <img
                 src={asset('branch_top_1.svg')}
                 alt=""
                 loading="lazy"
+                width="70"
+                height="52"
                 className="absolute top-0 left-0"
               />
 
@@ -69,7 +67,10 @@ export default function Hero() {
                 src={asset('branch_top_2.svg')}
                 alt=""
                 loading="lazy"
+                width="119"
+                height="82"
                 className="absolute -top-5 left-13 origin-center"
+                style={{ willChange: 'transform' }}
                 animate={{ rotate: [0, -3, -3, 0, 0] }}
                 transition={branchTransition}
               />
@@ -78,7 +79,10 @@ export default function Hero() {
                 src={asset('branch_bottom_1.svg')}
                 alt=""
                 loading="lazy"
+                width="100"
+                height="86"
                 className="absolute top-10 left-5 origin-center"
+                style={{ willChange: 'transform' }}
                 animate={{ rotate: [0, -10, -10, 0, 0] }}
                 transition={branchTransition}
               />
@@ -87,7 +91,10 @@ export default function Hero() {
                 src={asset('branch_bottom_2.svg')}
                 alt=""
                 loading="lazy"
+                width="124"
+                height="70"
                 className="absolute top-9 left-18 origin-center"
+                style={{ willChange: 'transform' }}
                 animate={{ rotate: [-2, -13, -13, -2, -2] }}
                 transition={branchTransition}
               />
@@ -96,7 +103,10 @@ export default function Hero() {
                 src={asset('branch_bottom_3.svg')}
                 alt=""
                 loading="lazy"
+                width="175"
+                height="67"
                 className="absolute top-9 left-26 origin-center"
+                style={{ willChange: 'transform' }}
                 animate={{ rotate: [-2, -8, -8, -2, -2] }}
                 transition={branchTransition}
               />
@@ -105,8 +115,10 @@ export default function Hero() {
                 src={asset('branch_bottom_4.svg')}
                 alt=""
                 loading="lazy"
+                width="161"
+                height="67"
                 className="absolute top-5 left-26.5 rotate-[-6deg]"
-                style={{ transformOrigin: '100% 100%' }}
+                style={{ transformOrigin: '100% 100%', willChange: 'transform' }}
                 animate={{ rotate: [0, -5, -5, 0, 0] }}
                 transition={branchTransition}
               />
@@ -166,7 +178,7 @@ export default function Hero() {
               src={asset('images/plant.webp')}
               alt="Hands gently holding a potted Monstera plant"
               className="w-[669px] max-w-[709px] h-auto object-contain object-bottom relative z-10 select-none pointer-events-none translate-y-[1px]"
-              // LCP Element: Eagerly loaded, high priority. This is correct.
+              fetchPriority="high"
               loading="eager"
               width="669"
               height="709"
